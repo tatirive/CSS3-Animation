@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CSS3 Animation</title>
+
+		<meta name="description" content="CSS3 Animation">
+		<meta name="author" content="Ricardo Alvarado">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<link rel="stylesheet" href="css/custom.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>CSS3 Animation</h2>
+					<h3></h3>
+					<p>
+						<small>Created by Tatiana Rivera</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Agenda</h2>
+					<ol>
+						<li>CSS3 Animation</li>
+						<li>Property</li>
+						<li>Sub-Properties</li>
+						<li>@keyframes</li>
+						<li>transform</li>
+						<li>Examples</li>
+					</ol>
+
+				</section>
+
+				<section>
+					<h3>CSS3 Animation</h3>
+					<p class="left small-font">
+						CSS3 animations allow you to animate the transition between one CSS style configuration to another.
+					</p><br />
+					<p class="left small-font">
+						Advantages:
+					</p>
+					<ul class="block small-font">
+						<li>
+							Easy - No JS
+						</li>
+						<li>
+							Doesn't need a supercomputer
+						</li>
+						<li>
+							Optimizes
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Property</h3>
+					<p>
+						 animation
+					</p>
+					<a class="image" href="http://anthonycalzadilla.com/css3-ATAT/index.html" target="_blank">
+						<img width="535" height="400" src="http://media.creativebloq.futurecdn.net/sites/creativebloq.com/files/images/2013/01/sw.jpg" alt="animation">
+					</a>
+				</section>
+
+				<section>
+					<h3>Sub-Properties</h3>
+					<ul class="block small-font left-block">
+						<li>
+							animation-delay
+						</li>
+						<li>
+							animation-direction
+						</li>
+						<li>
+							animation-duration
+						</li>
+						<li>
+							animation-iteration-count
+						</li>
+					</ul>
+					<ul class="block small-font right-block">
+						<li>
+							animation-name
+						</li>
+						<li>
+							animation-play-state
+						</li>
+						<li>
+							animation-timing-function
+						</li>
+						<li>
+							animation-fill-mode
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>@keyframes</h2>
+						<img width="700" height="350" src="https://cdn.css-tricks.com/wp-content/uploads/2015/01/keyframes1.jpg" alt="keyframes">
+						</br>
+						<a href="http://www.impressivewebs.com/demo-files/css3-animated-scene/" target="_blank">A Simple Scene Animated with CSS3</a>
+					</section>
+					
+					<section data-markdown>
+						<script type="text/template">
+							## @keyframes - Syntax
+							</br>
+					
+							```
+							
+								@keyframes <identifier> {
+									[ [ from | to | <percentage> ] [, from | to | <percentage> ]* block ]*
+								}
+								
+							```
+						</script>
+					</section>
+					
+					<section data-markdown>
+						<script type="text/template">
+							## @keyframes - Properties are left out
+							</br>
+
+							```
+							
+								@keyframes identifier {
+									0% { top: 0; left: 0; }
+									30% { top: 50px; }
+									68%, 72% { left: 50px; }
+									100% { top: 100px; left: 100%; }
+								}
+								
+							```
+						</script>
+					</section>
+					
+					<section data-markdown>
+						<script type="text/template">
+							## @keyframes - Multiple times
+							</br>
+
+							```
+							
+								@keyframes identifier {
+									0% { top: 0; }
+									50% { top: 30px; left: 20px; }
+									50% { top: 10px; }
+									100% { top: 0; }
+								}
+								
+							```
+						</script>
+					</section>
+					
+					<section data-markdown>
+						<script type="text/template">
+							## @keyframes - !important
+							</br>
+
+							```
+							
+								@keyframes important1 {
+									from { margin-top: 50px; }
+									50%  { margin-top: 150px !important; } /* ignored */
+									to   { margin-top: 100px; }
+								}
+
+								@keyframes important2 {
+									from { 
+											margin-top: 50px;
+											margin-bottom: 100px; 
+										 }
+									to   { 
+											margin-top: 150px !important; /* ignored */
+											margin-bottom: 50px; 
+										 }
+								}
+								
+							```
+						</script>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>transform</h2></br>
+						<p>The <i>transform-function</i> CSS data type denotes a function applied to an element's representation in order to modify it.</p>
+					</section>
+					<section>
+						<h2>transform: matrix</h2></br>
+						<a href="http://www.useragentman.com/matrix/" target="_blank"><img class="no-border" width="350" height="400" src="http://www.useragentman.com/blog/wp-content/uploads/2011/01/matrixConstructionSetScreenshot.png" alt="translate"></a>
+					</section>
+					<section>
+						<h2>transform: translate</h2></br>
+						<img class="no-border" width="195" height="150" src="https://developer.mozilla.org/@api/deki/files/5970/=transform-functions-translate_2.png" alt="translate">
+					</section>
+					<section>
+						<h2>transform: scale</h2></br>
+						<img class="no-border" width="290" height="350" src="https://developer.mozilla.org/@api/deki/files/5804/=transform-functions-scale_2_2.png?size=webview" alt="scale">
+					</section>
+					<section>
+						<h2>transform: rotate</h2></br>
+						<img class="no-border" width="275" height="258" src="https://developer.mozilla.org/@api/deki/files/5976/=transform-functions-rotate_19.5.png" alt="rotate">
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Multiple function values
+							```
+							
+								transform: translateX(10px) rotate(10deg) translateY(5px);
+
+								
+							```
+						</script>
+					</section>
+				</section>
+				
+				<section>
+					<h2>Browser Support</h2>
+					<img class="no-border" width="900" height="350" src="http://3eixm434vx1x2ldblu27c3oe.wpengine.netdna-cdn.com/wp-content/uploads/2015/03/slide-7.png" alt="Browser Support">
+
+				</section>
+				<section>
+					<h2>Example</h2>
+					<a href="http://www.clicktorelease.com/blog/how-to-make-clouds-with-css-3d" target="_blank"><img class="no-border" width="900" height="350" src="http://media.creativebloq.futurecdn.net/sites/creativebloq.com/files/articles/article/2012/07/cloudsincss.jpg" alt="Clounds"></a>
+
+				</section>
+				<section>
+					<h1>THE END</h1>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme || 'sky', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
